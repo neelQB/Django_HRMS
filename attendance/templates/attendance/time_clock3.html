@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Card</title>
+    <link rel="stylesheet" href="{% static 'attendance/css/time_clock_style3.css' %}">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3>Attendance</h3>
+<!--        <p><strong>08:30 AM, 11 Mar 2025</strong></p>-->
+        <p><strong>{{ attendance.date }}</strong></p>
+        <p><strong>{{ attendance.punch_in }}</strong></p>
+        <div class="progress-ring">
+            <svg width="120" height="120">
+                <circle class="progress-ring-background" cx="60" cy="60" r="50" />
+                <circle class="progress-ring-progress" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="314" />
+            </svg>
+            <div class="progress-text" id="progress-text">{{ attendance.working_hours }}</div>
+        </div>
+        <button class="punch-btn" action="clockout/">Punch Out</button>
+        <a href="{% url 'markcheckout' %}" >PUNCH OUT</a>
+    </div>
+
+<script src="{% static 'attendance/js/time_clock_script3.js' %}"></script>
+</body>
+</html>

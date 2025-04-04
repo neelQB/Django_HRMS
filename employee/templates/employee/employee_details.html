@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Details - {{user}}</title>
+</head>
+<body>
+
+
+<div class="container overflow-hidden text-center">
+        <h3>
+
+        </h3>
+        <div class="col gy-5">
+            <form action=""method="POST" novalidate>
+                {% csrf_token %}
+                {% for fm in form %}
+                    {% if fm %}
+                        {{ fm.label_tag }} {{ fm }} <br>
+                        {{ fm.errors|striptags }}<br>
+                    {% endif %}
+                {% endfor %}
+                <input type="submit" value="Save">
+            </form>
+
+        {{ user.team }} <br><br>
+        {{ user.dob }} <br><br>
+        {{ user.gender }} <br><br>
+        {{ user.ctc }}
+        </div>
+
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'logoutemployee' %}">Signout</a>
+</div>
+
+</body>
+</html>

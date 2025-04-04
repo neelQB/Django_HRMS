@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.profile-card {
+    background: white;
+    width: 500px;
+    margin: auto;
+    transform: scale(0.8);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    background: #212529;
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+
+.profile-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.profile-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.dot {
+    color: orange;
+    font-size: 18px;
+}
+
+.edit-icon {
+    position: absolute;
+    right: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.profile-details {
+    padding: 20px;
+    color: #333;
+}
+
+.profile-details p {
+    margin: 10px 0;
+}
+
+strong {
+    color: #555;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="{% static 'attendance/css/test2.css' %}">
+    <style>
+        /* Include the same styles as provided */
+        @import url(https://fonts.googleapis.com/css2?family=Nunito&display=swap);
+        @import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+        /* Additional styles can be added here */
+    </style>
+</head>
+<body>
+<div id="webcrumbs">
+    <div class="w-full h-full bg-gray-50">
+        <nav class="bg-white shadow-sm p-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-8">
+                    <img src="https://webcrumbs.cloud/placeholder" alt="Logo" class="h-8"/>
+                    <div class="flex gap-6">
+                        <a class="px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors duration-200">Dashboard</a>
+                        <a class="px-4 py-2 rounded-lg bg-blue-50 text-blue-600">Attendance</a>
+                        <a class="px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors duration-200">Leave</a>
+                        <a class="px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors duration-200">Reports</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined p-2 hover:bg-gray-50 rounded-full cursor-pointer">notifications</span>
+                    <span class="material-symbols-outlined p-2 hover:bg-gray-50 rounded-full cursor-pointer">settings</span>
+                </div>
+            </div>
+        </nav>
+        <div class="p-6">
+            <div class="flex gap-6">
+                <div class="w-[400px] bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="{{who.profile.url}}" alt="Profile"
+                             class="w-12 h-12 rounded-full object-cover ring-2 ring-blue-100 hover:ring-blue-300 transition-all duration-300"/>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-800">{{who.first_name}} {{who.last_name}}</h2>
+                            <p class="text-sm text-gray-500">{{who.role}} • {{who.team}}</p>
+                        </div>
+                        <span class="material-symbols-outlined ml-auto text-blue-500 cursor-pointer hover:text-blue-600 hover:scale-110 transition-transform duration-300">
+                                <a href="{% url 'empdetails' user.id %}">edit</a>
+                            </span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="hover:bg-gray-50 p-2 rounded-lg transition-colors duration-200">
+                            <p class="text-sm text-gray-500 mb-1">Phone Number</p>
+                            <p class="text-sm">{{who.mobile}}</p>
+                        </div>
+                        <div class="hover:bg-gray-50 p-2 rounded-lg transition-colors duration-200">
+                            <p class="text-sm text-gray-500 mb-1">Email Address</p>
+                            <p class="text-sm">{{who.email}}</p>
+                        </div>
+                        <div class="hover:bg-gray-50 p-2 rounded-lg transition-colors duration-200">
+                            <p class="text-sm text-gray-500 mb-1">Address</p>
+                            <p class="text-sm">{{web.address}}</p>
+                        </div>
+                        <div class="hover:bg-gray-50 p-2 rounded-lg transition-colors duration-200">
+                            <p class="text-sm text-gray-500 mb-1">Joined on</p>
+                            <p class="text-sm">{{who.joining_date}}</p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <details class="group">
+                            <summary
+                                    class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition-all

@@ -1,0 +1,63 @@
+.employee-list-container{
+    max-height: 300px; /* Adjust height as needed */
+    overflow-y: auto; /* Enables vertical scrollbar */
+    border: 1px solid #ddd; /* Optional: Adds border */
+    border-radius: 5px; /* Optional: Rounds corners */
+    padding: 10px; /* Optional: Adds spacing */
+}
+
+.employee-scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+.scroll-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.employee-card {
+    flex: 0 0 auto;
+    width: 150px; /* Adjust width as needed */
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-text {
+    font-size: 12px;
+    color: gray;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hide scrollbar but allow scrolling */
+.employee-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.employee-scroll-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

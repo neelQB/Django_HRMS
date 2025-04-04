@@ -1,0 +1,273 @@
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Left Panel -->
+        <div class="w-64 bg-white h-screen shadow-md p-6">
+            <h2 class="text-2xl font-bold mb-6">Admin Dashboard</h2>
+            <nav class="space-y-4">
+                <a class="block text-gray-700 hover:text-blue-500" href="#">Dashboard</a>
+                <a class="block text-gray-700 hover:text-blue-500" href="#">Projects</a>
+                <a class="block text-gray-700 hover:text-blue-500" href="#">Clients</a>
+                <a class="block text-gray-700 hover:text-blue-500" href="#">Tasks</a>
+                <a class="block text-gray-700 hover:text-blue-500" href="#">Reports</a>
+            </nav>
+        </div>
+        <div class="flex-1">
+            <!-- Top Panel -->
+            <div class="bg-white shadow-md p-6 flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold">Admin Dashboard</h1>
+                    <nav class="text-gray-500">
+                        <a class="hover:underline" href="#">Dashboard</a> /
+                        <span class="text-gray-700">Admin Dashboard</span>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md flex items-center">
+                        <i class="fas fa-file-export mr-2"></i> Export
+                    </button>
+                    <button class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md flex items-center">
+                        <i class="fas fa-calendar-alt mr-2"></i> 2025
+                    </button>
+                    <div class="flex items-center space-x-2">
+                        <img alt="Profile picture of current user" class="w-10 h-10 rounded-full" src="https://placehold.co/40x40" />
+                        <span class="text-gray-700">Adrian</span>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6 fade-in">
+                <div class="bg-white p-6 rounded-lg shadow-md mb-6 card">
+                    <div class="flex items-center">
+                        <img alt="Profile picture of Adrian" class="w-12 h-12 rounded-full mr-4" src="https://placehold.co/50x50" />
+                        <div>
+                            <h2 class="text-xl font-bold">Welcome Back, Adrian <i class="fas fa-check-circle text-green-500"></i></h2>
+                            <p>You have <span class="text-blue-500">21</span> Pending Approvals & <span class="text-red-500">14</span> Leave Requests</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-6">
+                    <div class="bg-white p-4 rounded-lg shadow-md card">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-calendar-check text-orange-500 text-2xl mr-4"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold">Attendance Overview</h3>
+                                <p class="text-gray-500">{{ employee_strength_present }} /{{ employee_strength }}
+<!--                                    <span class="text-green-500">+2.1%</span></p>-->
+                            </div>
+                        </div>
+                        <a class="text-blue-500 hover:underline" href="#">View Details</a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md card">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-folder text-blue-500 text-2xl mr-4"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold">Total No of Project's</h3>
+                                <p class="text-gray-500">90/125 <span class="text-red-500">-2.1%</span></p>
+                            </div>
+                        </div>
+                        <a class="text-blue-500 hover:underline" href="#">View All</a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md card">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-users text-blue-500 text-2xl mr-4"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold">Total No of Clients</h3>
+                                <p class="text-gray-500">69/86 <span class="text-red-500">-11.2%</span></p>
+                            </div>
+                        </div>
+                        <a class="text-blue-500 hover:underline" href="#">View All</a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md card">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-tasks text-pink-500 text-2xl mr-4"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold">Total No of Tasks</h3>
+                                <p class="text-gray-500">225/28 <span class="text-green-500">+11.2%</span></p>
+                            </div>
+                        </div>
+                        <a class="text-blue-500 hover:underline" href="#">View All</a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md card">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-wallet text-purple-500 text-2xl mr-4"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold">Earnings</h3>
+                                <p class="text-gray-500">$21445 <span class="text-green-500">+10.2%</span></p>
+                            </div>
+                        </div>
+                        <a class="text-blue-500 hover:underline" href="#">View All</a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md card">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-dollar-sign text-red-500 text-2xl mr-4"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold">Profit This Week</h3>
+                                <p class="text-gray-500">$5,544 <span class="text-green-500">+2.1%</span></p>
+                            </div>
+                        </div>
+                        <a class="text-blue-500 hover:underline" href="#">View All</a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md card">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user-tie text-green-500 text-2xl mr-4"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold">Job Applicants</h3>
+                                <p class="text-gray-500">98 <span class="text-green-500">+2.1%</span></p>
+                            </div>
+                        </div>
+                        <a class="text-blue-500 hover:underline" href="#">View All</a>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md card">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user-plus text-black text-2xl mr-4"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold">New Hire</h3>
+                                <p class="text-gray-500">45/48 <span class="text-red-500">-11.2%</span></p>
+                            </div>
+                        </div>
+                        <a class="text-blue-500 hover:underline" href="#">View All</a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md col-span-2 card">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-semibold">Employees By Department</h3>
+                            <button class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md flex items-center">
+                                <i class="fas fa-calendar-alt mr-2"></i> This Week
+                            </button>
+                        </div>
+                        <div class="h-48">
+                            <img alt="Bar chart showing employees by department" src="https://placehold.co/600x200" />
+                        </div>
+                        <p class="text-gray-500 mt-4">No of Employees increased by <span class="text-green-500">+20%</span> from last Week</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md card">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-semibold">Employee Status</h3>
+                            <button class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md flex items-center">
+                                <i class="fas fa-calendar-alt mr-2"></i> This Week
+                            </button>
+                        </div>
+                        <div class="h-24">
+                            <img alt="Bar showing employee status" src="https://placehold.co/600x100" />
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mt-4">
+                            <div class="text-center">
+                                <h4 class="text-lg font-semibold">Fulltime (48%)</h4>
+                                <p class="text-gray-500">112</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="text-lg font-semibold">Contract (20%)</h4>
+                                <p class="text-gray-500">112</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md col-span-2 card">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-semibold">Attendance Overview</h3>
+                            <button class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md flex items-center">
+                                <i class="fas fa-calendar-alt mr-2"></i> Today
+                            </button>
+                        </div>
+                        <div class="h-48">
+                            <img alt="Pie chart showing attendance overview" src="https://placehold.co/600x200" />
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md card">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-semibold">Clock-In/Out</h3>
+                            <button class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md flex items-center">
+                                <i class="fas fa-calendar-alt mr-2"></i> Today
+                            </button>
+                        </div>
+                        <div class="overflow-y-auto h-64 space-y-4 no-scrollbar">
+                            <div class="flex items-center">
+                                <img alt="Profile picture of Daniel Esbella" class="w-10 h-10 rounded-full mr-4" src="https://placehold.co/40x40" />
+                                <div>
+                                    <h4 class="text-lg font-semibold">Daniel Esbella</h4>
+                                    <p class="text-gray-500">UI/UX Designer</p>
+                                </div>
+                                <span class="ml-auto text-green-500">09:15</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img alt="Profile picture of Doglas Martini" class="w-10 h-10 rounded-full mr-4" src="https://placehold.co/40x40" />
+                                <div>
+                                    <h4 class="text-lg font-semibold">Doglas Martini</h4>
+                                    <p class="text-gray-500">Project Manager</p>
+                                </div>
+                                <span class="ml-auto text-green-500">09:36</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img alt="Profile picture of Brian Villalobos" class="w-10 h-10 rounded-full mr-4" src="https://placehold.co/40x40" />
+                                <div>
+                                    <h4 class="text-lg font-semibold">Brian Villalobos</h4>
+                                    <p class="text-gray-500">Software Engineer</p>
+                                </div>
+                                <span class="ml-auto text-green-500">09:45</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img alt="Profile picture of Sarah Connor" class="w-10 h-10 rounded-full mr-4" src="https://placehold.co/40x40" />
+                                <div>
+                                    <h4 class="text-lg font-semibold">Sarah Connor</h4>
+                                    <p class="text-gray-500">HR Manager</p>
+                                </div>
+                                <span class="ml-auto text-green-500">09:50</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img alt="Profile picture of John Doe" class="w-10 h-10 rounded-full mr-4" src="https://placehold.co/40x40" />
+                                <div>
+                                    <h4 class="text-lg font-semibold">John Doe</h4>
+                                    <p class="text-gray-500">Marketing Specialist</p>
+                                </div>
+                                <span class="ml-auto text-green-500">10:00</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img alt="Profile picture of Jane Smith" class="w-10 h-10 rounded-full mr-4" src="https://placehold.co/40x40" />
+                                <div>
+                                    <h4 class="text-lg font-semibold">Jane Smith</h4>
+                                    <p class="text-gray-500">Sales Manager</p>
+                                </div>
+                                <span class="ml-auto text-green-500">10:15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

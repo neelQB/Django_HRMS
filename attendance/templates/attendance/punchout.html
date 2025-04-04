@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h2>
+    You are here because you punched out
+</h2>
+<h4>
+    PUNCH IN TIME = {{ intime }}
+    <br>
+    <br>
+    PUNCH OUT TIME = {{ outtime }}
+    <br>
+    <br>
+    TOTAL WORKING HOURS = {{ aggregate_session_working_hours }}
+    <br>
+    <br>
+    <br>
+    EFFECTIVE_WORKING_HOURS = {{ EFFECTIVE_WORKING_HOURS }}
+    <br>
+    <br>
+    <br>
+    TIME REMAINING = {{ t_remaining }}
+    <br>
+    <br>
+    LEAVING TIME = {{ leaving_time }}
+    <br>
+    <br>
+    WORKING HOURS THIS WEEK = {{ x }}
+    <br>
+    <br>
+    WORKING HOURS THIS MONTH = {{ y }}
+    <br>
+    <br>
+    WEEK = {{ week }}
+    <br>
+    <br>
+
+</h4>
+<a href="{% url 'test' %}" >Move</a>
+</body>
+</html>

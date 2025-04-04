@@ -1,0 +1,118 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard | {{ who.first_name }} </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'employee/css/dashboard_style.css' %}">
+</head>
+<body>
+<h2>
+    welcome {{ who.first_name }}, you're {{ whoami }},
+</h2>
+
+<a href="{% url 'logoutemployee' %}">
+    logout
+</a>
+
+{% block profile-card %}
+
+{% endblock profile-card %}
+<br>
+<br>
+<br>
+
+{% if who %}
+
+{% endif%}
+
+
+<!--{% for emp in employees %}-->
+<!--    {% if not emp.is_superuser %}-->
+<!--        {{ emp.first_name }}-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    {% endif %}-->
+
+<!--{% endfor %}-->
+
+
+<br>
+<br>
+
+
+{% block scroll_employees %}
+    {% if employees %}
+        <div class="container overflow-hidden">
+            <div class="col-3">
+                <h5 class="mb-3">Employees</h5>
+                <div class="employee-list-container">
+                    <ul class="list-group list-group-flush">
+                        {% for user in employees %}
+                          <li class="list-group-item">
+                              <a href="{% url 'empdetails' user.id %}">
+                                  {{ user.id }} - {{ user }} - {{ user.email }}
+                              </a>
+                          </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    {% endif %}
+{% endblock scroll_employees %}
+
+
+
+<br>
+<br>
+<br>
+
+{% if employees %}
+    <div class="container text-center">
+      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+          {% for user in employees %}
+          <div class="col">
+              <div class="p-3">
+                  <a href="{% url 'empdetails' user.id %}">
+                      {{user}}
+                  </a>
+
+              </div>
+        </div>
+          {% endfor %}
+      </div>
+    </div>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

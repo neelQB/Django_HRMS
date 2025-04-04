@@ -1,0 +1,73 @@
+body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .profile-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            display: flex;
+            gap: 20px;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .profile-info {
+            flex-grow: 1;
+        }
+        .profile-info h2 {
+            margin: 0;
+            font-weight: 600;
+        }
+        .profile-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .employee-id {
+            font-weight: bold;
+            color: #000;
+        }
+        .btn {
+            display: inline-block;
+            background: #6c5ce7;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: #5a4bdc;
+        }
+
+        .edit-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 16px;
+            color: #6c5ce7;
+            text-decoration: none;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .edit-icon i {
+            font-size: 14px;
+        }
+        .edit-icon:hover {
+            background: #6c5ce7;
+            color: #fff;
+        }

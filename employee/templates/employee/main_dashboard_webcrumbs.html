@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | {{ who.first_name }}</title>
+      <link rel="stylesheet" href="{% static 'employee/css/main_dashboard_webcrumbs_style.css' %}">
+</head>
+<body>
+{% block profile-card %}
+  <div id="webcrumbs">
+    <div class="w-[800px] bg-white rounded-2xl p-8 shadow-lg">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-semibold">Personal Information</h2>
+            <button class="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200" onclick="window.location.href='{% url 'empdetails' user.id %}'">
+                <span class="material-symbols-outlined text-blue-600">edit</span>
+            </button>
+        </div>
+        <div class="flex gap-8">
+            <div class="flex flex-col items-center">
+                <img src="{{ who.profile.url }}"
+                     alt="Profile"
+                     class="w-32 h-32 rounded-full object-cover mb-4 ring-4 ring-gray-100"/>
+                <h3 class="text-xl font-semibold mb-1">{{ who.first_name }}</h3>
+                <p class="text-gray-600 font-medium mb-1">{{ who.role }}</p>
+                <p class="text-gray-500 text-sm mb-2">{{ who.team }}</p>
+                <p class="text-gray-500 text-sm mb-4">Employee ID : {{ who.id }}</p>
+                <p class="text-gray-500 text-sm mb-6">Date of Joining : {{ who.joining_date }}</p>
+                <button class="bg-indigo-500 text-white px-6 py-2 rounded-lg
+                               hover:bg-indigo-600 transition-colors duration-200
+                               flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">mail</span>
+                    Send Message
+                </button>
+            </div>
+            <div class="flex-1 grid grid-cols-1 gap-6">
+                <div class="space-y-2">
+                    <p class="text-gray-500">Phone:</p>
+                    <p class="font-medium">{{ who.mobile }}</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-gray-500">Email:</p>
+                    <p class="font-medium">{{ who.email }}</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-gray-500">Birthday:</p>
+                    <p class="font-medium">{{ who.dob }}</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-gray-500">Address:</p>
+                    <p class="font-medium">
+                        {{ who.address }}
+                    </p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-gray-500">Gender:</p>
+                    <p class="font-medium">{{ who.gender }}</p>
+                </div>
+            </div>
+            <div>
+                <a href="{% url 'markcheckin' %}" >
+                    <p class="font-medium">Punch In</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock profile-card %}
+
+
+  </body>
+</html>
